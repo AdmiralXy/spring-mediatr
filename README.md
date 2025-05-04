@@ -64,9 +64,9 @@ public record GetUserQuery(UUID id) implements Request<UserDto> {}
 ```java
 @Handler
 class GetUserHandler implements RequestHandler<GetUserQuery, UserDto> {
-public UserDto handle(GetUserQuery query) {
-return new UserDto(...); // бизнес-логика
-}
+    public UserDto handle(GetUserQuery query) {
+        return new UserDto(...); // бизнес-логика
+    }
 }
 ```
 
