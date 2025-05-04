@@ -52,13 +52,14 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add $FILE
           git commit -m "Increment version to $NEW_VERSION"
-          git push origin main --force-with-lease
+          git tag -a "v$NEW_VERSION" -m "Release v$NEW_VERSION"
+          git push origin main --follow-tags --force-with-lease
 
       - name: Create GitHub Release
         uses: actions/create-release@v1
         with:
-          tag_name: v${{ steps.extract_version.outputs.new_version }}
-          release_name: Release v${{ steps.extract_version.outputs.new_version }}
+          tag_name: v${{ steps.versioning.outputs.new_version }}
+          release_name: Release v${{ steps.versioning.outputs.new_version }}
           draft: false
           prerelease: false
         env:
