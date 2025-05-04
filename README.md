@@ -65,7 +65,7 @@ public record GetUserQuery(UUID id) implements Request<UserDto> {}
 @Handler
 class GetUserHandler implements RequestHandler<GetUserQuery, UserDto> {
     public UserDto handle(GetUserQuery query) {
-        return new UserDto(...); // бизнес-логика
+        return new UserDto(...);
     }
 }
 ```
