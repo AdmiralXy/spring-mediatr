@@ -46,7 +46,7 @@ jobs:
         run: |
           git fetch origin main
           git checkout main
-          FILE=${{ github.event.inputs.module }}/gradle.properties
+          FILE=gradle.properties
           VERSION=$(grep 'version=' $FILE | cut -d '=' -f2)
           NEW_VERSION=$(echo $VERSION | awk -F. -v OFS=. '{$NF++;print}')
           sed -i "s/version=$VERSION/version=$NEW_VERSION/" $FILE
