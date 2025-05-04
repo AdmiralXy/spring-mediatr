@@ -59,8 +59,8 @@ jobs:
       - name: Create GitHub Release
         uses: actions/create-release@v1
         with:
-          tag_name: v${{ steps.versioning.outputs.new_version }}
-          release_name: Release v${{ steps.versioning.outputs.new_version }}
+          tag_name: v${{ steps.versioning.outputs.version }}
+          release_name: Release v${{ steps.versioning.outputs.version }}
           draft: false
           prerelease: false
         env:
