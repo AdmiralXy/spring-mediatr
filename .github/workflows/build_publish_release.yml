@@ -47,6 +47,7 @@ jobs:
           VERSION=$(grep 'version=' $FILE | cut -d '=' -f2)
           NEW_VERSION=$(echo $VERSION | awk -F. -v OFS=. '{$NF++;print}')
           sed -i "s/version=$VERSION/version=$NEW_VERSION/" $FILE
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
           echo "new_version=$NEW_VERSION" >> $GITHUB_OUTPUT
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
