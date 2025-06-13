@@ -1,6 +1,6 @@
 <img src=".github/resources/logo.jpg" />
 
-<h1 align="center">Mediatr ⚡ for Spring Boot 3 + Java 17‑21</h1>
+<h1 align="center">Mediatr ⚡ for Spring Boot 3 + Java 17+</h1>
 
 <p align="center">
 Lightweight, dependency-free in-process messaging. <br/>
